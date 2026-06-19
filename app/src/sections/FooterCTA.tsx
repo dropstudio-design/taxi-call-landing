@@ -16,7 +16,7 @@ export default function FooterCTA() {
         {/* Channel QR Code */}
         <ScrollReveal delay={0.1}>
           <a
-            href="https://on.zello.com/rt7zxp"
+            href="https://on.zello.com/8qmp6r"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-block"

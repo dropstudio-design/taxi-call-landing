@@ -19,7 +19,7 @@ export default function QRCodeSection() {
               用Zello App掃描以下QR Code，或點擊連結，即刻加入「HKNewTaxi」頻道！
             </p>
             <a
-              href="https://on.zello.com/rt7zxp"
+              href="https://on.zello.com/8qmp6r"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-black/20 rounded-full px-5 py-3 hover:bg-black/30 transition-colors"
@@ -29,14 +29,14 @@ export default function QRCodeSection() {
                 alt="Zello"
                 className="w-8 h-8 rounded-full"
               />
-              <span className="text-white font-bold">on.zello.com/rt7zxp</span>
+              <span className="text-white font-bold">on.zello.com/8qmp6r</span>
             </a>
           </ScrollReveal>
 
           {/* Right: Channel QR Code */}
           <ScrollReveal delay={0.2} className="flex-shrink-0">
             <a
-              href="https://on.zello.com/rt7zxp"
+              href="https://on.zello.com/8qmp6r"
               target="_blank"
               rel="noopener noreferrer"
               className="group block"
