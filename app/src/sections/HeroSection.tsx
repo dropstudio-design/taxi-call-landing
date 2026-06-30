@@ -1,7 +1,16 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { ChevronDown, MessageCircle } from "lucide-react";
+import { ChevronDown, MessageCircle, Play } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 export default function HeroSection() {
+  const [videoOpen, setVideoOpen] = useState(false);
+
   const scrollToQR = () => {
     document.getElementById("qrcode")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -74,7 +83,7 @@ export default function HeroSection() {
           用Zello對講機App，按住就講，即時Call車
         </motion.p>
 
-        {/* CTA Button */}
+        {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -98,7 +107,34 @@ export default function HeroSection() {
           </a>
         </motion.div>
 
-
+        {/* Video Tutorial Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.75 }}
+          className="mt-6"
+        >
+          <Dialog open={videoOpen} onOpenChange={setVideoOpen}>
+            <DialogTrigger asChild>
+              <button className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-full hover:bg-white/20 hover:scale-105 transition-all duration-300">
+                <Play className="w-5 h-5 fill-white" />
+                影片教學
+              </button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-2xl bg-[#1A1A1A] border-white/10 p-0 overflow-hidden">
+              <DialogTitle className="sr-only">影片教學</DialogTitle>
+              <div className="relative aspect-[9/16] w-full bg-black">
+                <iframe
+                  src="https://www.youtube.com/embed/rTH8tetrbLA"
+                  title="HKNewTaxi 影片教學"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
+                />
+              </div>
+            </DialogContent>
+          </Dialog>
+        </motion.div>
       </div>
 
       {/* Scroll Indicator */}
